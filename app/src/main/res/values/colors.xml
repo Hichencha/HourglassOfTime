@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">@color/white</color>
+
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_fab">#ccffffff</color>
+    <!--透明背景色-->
+    <color name="bg_transparent">#52000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="bg_Color_white_overlay">#0fffffff</color>
+
+    <color name="color_gray">#a5a4a8</color>
+
+    <!--fab  颜色-->
+    <color name="fab_colorNormal_bg">#FFB805</color>
+    <color name="fab_colorPressed_bg">#F2AB00</color>
+    <color name="fab_colorRipple_bg">#D99200</color>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:layout="@layout/preference_widget_item"
+        android:title="布局展示">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/GRID_LIST_KEY"
+            android:layout="@layout/preference_bg_layout"
+            android:summaryOff="网格展示"
+            android:summaryOn="列表展示"
+            android:title="界面展示"/>
+        <!--android:widgetLayout="@layout/checkbox_layout"-->
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_widget_item"
+        android:title="夜间模式">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/NIGHT_MODE_SELECT"
+            android:layout="@layout/preference_bg_layout"
+            android:title="夜间模式"
+            android:summaryOff="白昼模式"
+            android:summaryOn="夜间模式"/>
+
+        <!--android:widgetLayout="@layout/switch_layout"-->
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.chencha.hourglassoftime.ui.activity.MainActivity">
+    <item
+        android:id="@+id/action_save"
+        android:orderInCategory="100"
+        android:title="@string/action_save"
+        app:showAsAction="always"
+        android:icon="@mipmap/save_img"/>
+
+    <item
+        android:id="@+id/action_select"
+        android:icon="@mipmap/select_input"
+        android:title="@string/action_select"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_bg"
+        android:icon="@mipmap/bg_color"
+        android:title="@string/action_bg_color"
+        app:showAsAction="always"/>
+
+
+</menu>
