@@ -44,4 +44,28 @@
         <item name="android:windowIsFloating">true</item>
     </style>
 
+    <!--白天主题  和主题一样-->
+    <style name="DayTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="clockBackground">@android:color/white</item>
+        <item name="clockTextColor">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--黑夜主题-->
+    <style name="NightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="clockBackground">@color/color3F3F3F</item>
+        <item name="clockTextColor">@color/color8A9599</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
 </resources>

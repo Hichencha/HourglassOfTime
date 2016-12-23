@@ -1,8 +1,8 @@
 package com.chencha.hourglassoftime.ui.activity;
 
 import android.graphics.Color;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.widget.FrameLayout;
 
 import com.chencha.hourglassoftime.R;
 import com.chencha.hourglassoftime.ui.base.BaseActivity2;
@@ -18,10 +18,12 @@ import butterknife.BindView;
 public class NoteSettingActivity extends BaseActivity2 {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.setting_frm)
-    FrameLayout mSettingFrm;
+    @BindView(R.id.list_item)
+    RecyclerView mListItem;
 
-//    private SettingFragment mSettingFragment;
+
+    private static String[] settingItems = {"界面展示", "夜间模式", "关于我"};
+
 
     @Override
     protected int getLayoutId() {
@@ -33,10 +35,7 @@ public class NoteSettingActivity extends BaseActivity2 {
         initToobar("设置");
 
         mToolbar.setBackgroundColor(Color.parseColor("#FFB805"));
-
-//        mSettingFragment = SettingFragment.newInstance();
-//        getFragmentManager().beginTransaction().replace(R.id.setting_frm, mSettingFragment).commit();
-
     }
+
 
 }

@@ -52,7 +52,6 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
 
     }
 
-
     /**
      * toolbar
      *

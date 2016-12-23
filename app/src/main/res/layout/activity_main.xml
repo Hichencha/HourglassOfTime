@@ -10,11 +10,20 @@
     android:fitsSystemWindows="true"
     tools:context="com.chencha.hourglassoftime.ui.activity.MainActivity">
 
-
     <RelativeLayout
+        android:id="@+id/layout_note"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/switch_box"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/check_on_off"
+            android:button="@null"
+            android:checked="false"/>
 
         <!--<com.chencha.hourglassoftime.util.Pendulum-->
         <!--android:id="@+id/pendulum_setting"-->
@@ -64,13 +73,13 @@
                 android:src="@mipmap/voice"
                 fab:fab_label="语音"/>
 
-            <com.chencha.hourglassoftime.ui.fab.FloatingActionButton
-                android:id="@+id/seeting_btn"
-                style="@style/MenuButtonsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/help"
-                fab:fab_label="设置"/>
+            <!--<com.chencha.hourglassoftime.ui.fab.FloatingActionButton-->
+            <!--android:id="@+id/seeting_btn"-->
+            <!--style="@style/MenuButtonsStyle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/help"-->
+            <!--fab:fab_label="设置"/>-->
         </com.chencha.hourglassoftime.ui.fab.FloatingActionMenu>
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
