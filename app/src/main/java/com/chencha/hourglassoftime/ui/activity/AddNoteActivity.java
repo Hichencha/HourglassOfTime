@@ -9,11 +9,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.chencha.hourglassoftime.R;
 import com.chencha.hourglassoftime.ui.base.BaseActivity2;
 import com.chencha.hourglassoftime.util.Constants;
+import com.chencha.hourglassoftime.util.NoteEditor;
 
 import butterknife.BindView;
 
@@ -30,6 +32,10 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
     Toolbar mToolbar;
     @BindView(R.id.note_text_layout)
     CoordinatorLayout mNoteTextLayout;
+    @BindView(R.id.line)
+    View mLine;
+    @BindView(R.id.note_bg_edit)
+    NoteEditor mNoteBgEdit;
 
     //选择的背景色
     private int mSelectColor;
@@ -111,6 +117,7 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
         mBackColor = "#" + Integer.toHexString(mSelectColor);
         mNoteTextLayout.setBackgroundColor(Color.parseColor(mBackColor));
         mToolbar.setBackgroundColor(Color.parseColor(mBackColor));
+        mNoteBgEdit.setBackgroundColor(Color.parseColor(mBackColor));
 
         Snackbar.make(mNoteTextLayout, "修改了混沌背景", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
