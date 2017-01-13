@@ -1,42 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/note_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:fitsSystemWindows="true"
-    tools:context="com.chencha.hourglassoftime.ui.activity.MainActivity">
+    android:fitsSystemWindows="true">
 
-    <RelativeLayout
-        android:id="@+id/layout_note"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/note_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context="com.chencha.hourglassoftime.ui.activity.MainActivity">
 
-        <CheckBox
-            android:id="@+id/switch_box"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/check_on_off"
-            android:button="@null"
-            android:checked="false"/>
 
-        <!--<com.chencha.hourglassoftime.util.Pendulum-->
-        <!--android:id="@+id/pendulum_setting"-->
-        <!--android:layout_width="110dp"-->
-        <!--android:layout_height="98dp"-->
-        <!--android:layout_alignParentRight="true"/>-->
+        <!--<CheckBox-->
+        <!--android:id="@+id/switch_box"-->
+        <!--android:layout_width="36dp"-->
+        <!--android:layout_height="36dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:background="@drawable/check_on_off"-->
+        <!--android:button="@null"-->
+        <!--android:checked="false"/>-->
 
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                fab:layout_scrollFlags="scroll|enterAlways|snap"
+                fab:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/action_grid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:button="@null"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:drawableRight="@drawable/tab_grid"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+
+                        <RadioButton
+                            android:id="@+id/action_row"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/action_grid"
+                            android:background="@null"
+                            android:button="@null"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:drawableRight="@drawable/tab_row"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:paddingLeft="16dp"/>
+                    </RadioGroup>
+
+                    <ImageView
+                        android:id="@+id/action_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="8dp"
+                        android:src="@drawable/setting"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_note"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"/>
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            fab:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
         <com.chencha.hourglassoftime.ui.fab.FloatingActionMenu
             android:id="@+id/menu_labels_right"
@@ -47,6 +105,7 @@
             android:paddingBottom="16dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            fab:elevation="8dp"
             fab:menu_animationDelayPerItem="0"
             fab:menu_backgroundColor="@color/white_fab"
             fab:menu_colorNormal="@color/fab_colorNormal_bg"
@@ -72,14 +131,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/voice"
                 fab:fab_label="语音"/>
-
-            <!--<com.chencha.hourglassoftime.ui.fab.FloatingActionButton-->
-            <!--android:id="@+id/seeting_btn"-->
-            <!--style="@style/MenuButtonsStyle"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@mipmap/help"-->
-            <!--fab:fab_label="设置"/>-->
         </com.chencha.hourglassoftime.ui.fab.FloatingActionMenu>
-    </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

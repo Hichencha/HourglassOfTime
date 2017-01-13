@@ -1,20 +1,15 @@
 package com.chencha.hourglassoftime.ui.base;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.chencha.hourglassoftime.R;
-import com.chencha.hourglassoftime.util.StatusBarUtil;
 
-import butterknife.ButterKnife;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.Utils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityBase;
@@ -27,11 +22,6 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
  */
 
 public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBackActivityBase {
-    //布局文件
-    protected abstract int getLayoutId();
-
-    protected abstract void initView();
-
     // Context
     protected Context mContext;
 
@@ -45,25 +35,7 @@ public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBa
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            if (isTranslucentStatusBar()) {
-                Window window = getWindow();
-                window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                        WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            }
-        }
-
-        StatusBarUtil statusBarUtil = new StatusBarUtil();
-        statusBarUtil.StatusBarLightMode(this);
-        statusBarUtil.setStatusBarColor(this, R.color.colorAccent);
-
-        setContentView(getLayoutId());
-
         mContext = this;
-        ButterKnife.bind(this);
-        initView();
-
         mBackActivityHelper = new SwipeBackActivityHelper(this);
         mBackActivityHelper.onActivityCreate();
 
@@ -77,18 +49,12 @@ public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBa
     public void initToobar(String title) {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(title);
-        mToolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        mToolbar.setSubtitleTextColor(getResources().getColor(R.color.white));
+        mToolbar.setTitleTextColor(getResources().getColor(R.color.color_gray));
+        mToolbar.setSubtitleTextColor(getResources().getColor(R.color.color868686));
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setNavigationIcon(R.mipmap.back);
-    }
-
-
-    //判断是否 statusBar 状态栏为透明
-    protected boolean isTranslucentStatusBar() {
-        return true;
     }
 
 
@@ -107,6 +73,7 @@ public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBa
         return v;
     }
 
+
     @Override
     public SwipeBackLayout getSwipeBackLayout() {
         return mBackActivityHelper.getSwipeBackLayout();
@@ -116,6 +83,7 @@ public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBa
     public void setSwipeBackEnable(boolean enable) {
         getSwipeBackLayout().setEnableGesture(enable);
     }
+
 
     @Override
     public void scrollToFinishActivity() {
@@ -149,4 +117,6 @@ public abstract class BaseActivity2 extends AppCompatActivity implements SwipeBa
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

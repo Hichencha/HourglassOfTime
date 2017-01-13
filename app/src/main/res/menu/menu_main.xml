@@ -2,23 +2,17 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.chencha.hourglassoftime.ui.activity.MainActivity">
+
     <item
-        android:id="@+id/action_save"
+        android:id="@+id/action_night"
         android:orderInCategory="100"
-        android:title="@string/action_save"
-        app:showAsAction="always"
-        android:icon="@mipmap/save_img"/>
+        android:title="@string/select_day_night"
+        app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_select"
-        android:icon="@mipmap/select_input"
-        android:title="@string/action_select"
-        app:showAsAction="always"/>
-    <item
-        android:id="@+id/action_bg"
-        android:icon="@mipmap/bg_color"
-        android:title="@string/action_bg_color"
-        app:showAsAction="always"/>
-
+        android:id="@+id/action_setting"
+        android:orderInCategory="101"
+        android:title="@string/setting"
+        app:showAsAction="never"/>
 
 </menu>

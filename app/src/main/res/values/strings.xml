@@ -9,7 +9,10 @@
     <string name="cancel">取消</string>
     <string name="back">返回</string>
     <string name="custom_define">自定义</string>
-
+    <string name="setting">设置</string>
+    <string name="select_day_night">夜间模式</string>
+    <string name="layout_grid">网格</string>
+    <string name="layout_row">线性</string>
 
     <string name="GRID_LIST_KEY">GRID_LIST_KEY</string>
     <string name="NIGHT_MODE_SELECT">NIGHT_MODE_SELECT</string>

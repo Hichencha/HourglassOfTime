@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="right"
+              android:layout_marginTop="8dp"
+              android:orientation="vertical"
+              android:padding="16dp">
+
+    <com.chencha.hourglassoftime.ui.bubble.BubblesPopuUtil
+        android:id="@+id/bubble_layout"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:angle="8dp"
+        app:arrowCenter="true"
+        app:arrowHeight="6dp"
+        app:arrowLocation="right"
+        app:arrowPosition="6dp"
+        app:arrowWidth="8dp"
+        app:bubbleColor="@color/white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/setting_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:scrollbars="none"/>
+    </com.chencha.hourglassoftime.ui.bubble.BubblesPopuUtil>
+
+
+</LinearLayout>

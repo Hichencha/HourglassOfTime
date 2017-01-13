@@ -2,6 +2,8 @@ package com.chencha.hourglassoftime;
 
 import android.app.Application;
 
+import com.antfortune.freeline.FreelineCore;
+
 /**
  * Desc:
  * Author: chencha
@@ -16,6 +18,7 @@ public class NoteApplication extends Application {
         super.onCreate();
         //初始
 //        GreenDaoManager.getInstance();
+        FreelineCore.init(this);
 
     }
 }

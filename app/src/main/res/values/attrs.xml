@@ -84,18 +84,25 @@
         <attr name="menu_fab_hide_animation" format="reference"/>
     </declare-styleable>
 
-    <!--气泡-->
-    <declare-styleable name="bubble">
-        <attr name="shadowColor" format="color"/>
-        <attr name="padding" format="dimension"/>
-        <attr name="strokeWidth" format="float"/>
-        <attr name="cornerRadius" format="float"/>
-        <attr name="halfBaseOfLeg" format="dimension"/>
-    </declare-styleable>
 
     <!--背景-->
     <attr name="clockBackground" format="color"/>
     <attr name="clockTextColor" format="color"/>
 
+    <!--气泡-->
+    <declare-styleable name="BubbleView">
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="angle" format="dimension" />
+        <attr name="arrowHeight" format="dimension" />
+        <attr name="arrowPosition" format="dimension" />
+        <attr name="bubbleColor" format="color" />
+        <attr name="arrowCenter" format="boolean" />
+        <attr name="arrowLocation" format="enum">
+            <enum name="left" value="0x00" />
+            <enum name="right" value="0x01" />
+            <enum name="top" value="0x02" />
+            <enum name="bottom" value="0x03" />
+        </attr>
+    </declare-styleable>
 
 </resources>

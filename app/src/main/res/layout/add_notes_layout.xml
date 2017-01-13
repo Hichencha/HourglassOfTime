@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/note_text_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context=".ui.activity.AddNoteActivity">
+    android:fitsSystemWindows="true">
 
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout
+
+        android:id="@+id/note_text_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.AddNoteActivity">
 
-        <include
-            layout="@layout/toolbar_layout"/>
-
-        <View
-            android:id="@+id/line"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_below="@+id/toolbar"
-            android:background="@color/white"/>
+            android:layout_height="match_parent">
 
-        <com.chencha.hourglassoftime.util.NoteEditor
-            android:id="@+id/note_bg_edit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/line"
-            android:background="@color/fab_colorNormal_bg"
-            android:capitalize="sentences"
-            android:fadingEdge="vertical"
-            android:gravity="top"
-            android:inputType="textMultiLine"
-            android:padding="8dp"
-            android:scrollbars="vertical"
-            android:textSize="18sp"/>
-    </RelativeLayout>
+            <include layout="@layout/toolbar_layout"/>
 
-</android.support.design.widget.CoordinatorLayout>
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_below="@+id/toolbar"
+                android:background="@color/white"/>
+
+            <com.chencha.hourglassoftime.util.NoteEditor
+                android:id="@+id/note_bg_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/line"
+                android:background="@color/fab_colorNormal_bg"
+                android:capitalize="sentences"
+                android:fadingEdge="vertical"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:scrollbars="vertical"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

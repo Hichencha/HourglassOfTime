@@ -2,8 +2,10 @@ package com.chencha.hourglassoftime.ui.activity;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
@@ -16,8 +18,10 @@ import com.chencha.hourglassoftime.R;
 import com.chencha.hourglassoftime.ui.base.BaseActivity2;
 import com.chencha.hourglassoftime.util.Constants;
 import com.chencha.hourglassoftime.util.NoteEditor;
+import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static com.chencha.hourglassoftime.util.Constants.EXTRA_WEAC_SHARE;
 
@@ -41,21 +45,23 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
     private int mSelectColor;
     private String mBackColor;
 
+
     @Override
-    protected int getLayoutId() {
-        return R.layout.add_notes_layout;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_notes_layout);
+        StatusBarUtil.setTranslucent(this,22);
+        ButterKnife.bind(this);
+        initView();
     }
 
-    @Override
-    protected void initView() {
+    public void initView() {
         initToobar("创建");
-
         /**
          * 初始化背景色
          */
         mNoteTextLayout.setBackgroundColor(Color.parseColor("#FFB805"));
         mToolbar.setBackgroundColor(Color.parseColor("#FFB805"));
-
     }
 
     /**
@@ -66,7 +72,7 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_add_note, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -118,6 +124,7 @@ public class AddNoteActivity extends BaseActivity2 implements ColorChooserDialog
         mNoteTextLayout.setBackgroundColor(Color.parseColor(mBackColor));
         mToolbar.setBackgroundColor(Color.parseColor(mBackColor));
         mNoteBgEdit.setBackgroundColor(Color.parseColor(mBackColor));
+        StatusBarUtil.setTranslucent(this, 22);
 
         Snackbar.make(mNoteTextLayout, "修改了混沌背景", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
